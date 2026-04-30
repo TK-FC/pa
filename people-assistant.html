@@ -357,6 +357,18 @@ textarea::placeholder { color: var(--muted); font-weight: 300; }
 
 <script>
 // ============================================================
+// ACCESS TOKEN CHECK
+// ============================================================
+(function() {
+  var VALID_TOKEN = 'fc7Xk2mP9nQr4wBv';
+  var REDIRECT_URL = 'https://foodie-coaches-program.mykajabi.com/products/profit/categories/2159929978/posts/2196853645';
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('token') !== VALID_TOKEN) {
+    window.location.replace(REDIRECT_URL);
+  }
+})();
+
+// ============================================================
 // CONFIG
 // ============================================================
 var WORKER_URL = 'https://fc-pa-worker.tim-475.workers.dev';
